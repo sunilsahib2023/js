@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head></head>
+<script langauge ="JavaScript"  type="text/js">   </script>
+<body bgColor ="teal"  style="color:white">
+<div style="border-radius:50px;box-shadow:10px 10px 10px cyan;background:teal;width:300px;height:200px;margin:auto;padding: 50px;border:1px black ridge;">
+
+<h1>Set The Alarm </h1>
+ <audio controls id="mysound">
+    <source src="alarm_tola_tola.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio> 
+<form>
+<table>
+<tr>
+<td>Message</td><td><input  id="mes" type="text"  value="Type Message"  ></td>
+</tr>
+<tr>
+<td>Alarm Time(MilliSecond)</td><td><input id="num"  type="Number"  value="1000" max="10000" min="1000"  step="1000"></td>
+</tr>
+</table >
+
+<input type="button"  id="mybutton" value="Set Alarm Time">
+<input type="button"  id="mybutton2" value="Cancell Alarm">
+<input type="reset">
+</form>
+</div>
+<script>
+d = document.getElementById("mybutton")
+d2 = document.getElementById("mybutton2")
+s = document.getElementById("mysound")
+s.style.display = "none";
+s.setAttribute("preload", "auto");
+s.setAttribute("controls", "none");
+
+// s.autoplay = true
+//s.play()
+
+n = document.getElementById("num")
+m = document.getElementById("mes")
+
+var t = null
+ 
+
+
+
+d.onclick = function()
+{
+if(m.value=="")
+{
+alert("Please Type Alarm Message..")
+exit()
+ }
+s.style.display = "none";
+t =  setTimeout("show()",parseInt(n.value))
+document.title = "Alarm is Setted...."
+document.bgColor="Green"
+
+}
+
+
+function show()
+{
+s.play()
+s.style.display = "block"
+alert(m.value)
+m.value=""
+n.value="1000"
+}
+
+d2.onclick = function()
+{
+clearInterval(t)
+alert("Alarm Cancell")
+s.style.display = "none"
+}
+document.title ="Ready"
+</script>
+</body>
+</html>
