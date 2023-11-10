@@ -1,0 +1,41 @@
+<!doctype>
+<html>
+<head><title>div</title></head>
+<style>
+@keyframes sk
+{
+10%{box-shadow:15px 10px 35px magenta;}
+20%{box-shadow:15px 10px 35px cyan;}
+40%{box-shadow:15px 10px 35px yellow;}
+50%{box-shadow:15px 10px 35px green;}
+60%{box-shadow:15px 10px 35px orange;}
+}
+
+
+
+#b1{
+position:relative;top:100px;left:300px;
+font-size:40px;
+color:white;
+border:2px black solid;
+box-shadow:15px 10px 20px magenta;
+
+
+width:200px;height:50px;text-align:center;
+cursor:pointer;
+transition:2s;
+transition-timing-function:ease-in;
+}
+
+#b1:hover{animation:sk 1.50s alternate infinite;
+}
+
+</style>
+<body bgcolor="black">
+<div id="b1">Home </div>
+
+
+
+
+</body>
+</html>
