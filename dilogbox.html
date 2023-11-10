@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head></head>
+<script langauge ="JavaScript" type="text/js">   </script>
+
+<body>
+<h1>Working With JavaScript Dilogboxes  <h1>
+<img  id="paint" src="images/paint.png" width="60" height="50" style="cursor:pointer">
+<span id="cross" style='font-size:40px;cursor:pointer'>&#10060;</span>
+
+<script>
+/*  Asking Question ot taking user response */
+
+ var myp = document.getElementById("paint")
+ var myclose  = document.getElementById("cross")
+  t = document.createElement("span")
+t.innerHTML="Click"
+document.body.appendChild(t)
+t.style ="background:orange;color:green;padding:10px;border-radius:100px;box-shadow:5px 5px 5px gray;font-style:bold;position:absolute;top:0px;left:0px;display:none;"
+
+myclose.onmouseover=function(e)
+{
+//alert(e.pageX)
+t.style.display="block"
+t.style.top = e.pageY+"px"
+t.style.left = e.pageX+"px"
+t.style.background="orange"
+
+
+}
+myclose.onmouseout=function(e)
+{
+t.style.display="none"
+}
+
+myp.onmouseover=function(e)
+{
+//alert(e.pageX)
+t.style.display="block"
+t.style.top = e.pageY+"px"
+t.style.left = e.pageX+"px"
+t.style.background="blue"
+t.style.color ="white"
+
+}
+myp.onmouseout=function(e)
+{
+t.style.display="none"
+}
+
+
+
+
+myp.onclick = function()
+{
+/* prompt is a built in and  String Function :- return String (text)   */
+var ans = prompt("Want to Change background Color ....?","white")
+document.bgColor = ans
+}
+
+myclose.onclick  = function()
+{
+/* confirm is a built in and  boolean function :- return  boolean value true or false    */
+
+
+
+var a = confirm("Want to Close Webpage ..?")
+//alert(a)
+
+    if(a==true)
+	{
+		
+		close()
+	}
+              else
+	{
+		alert("Cont.. browsing ....!")
+	}
+}
+
+</script>
+
+
+
+
+</body>
+
+</html>
