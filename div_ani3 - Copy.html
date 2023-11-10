@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head><title></title>
+</head>
+<style>
+@keyframes changepic1
+{
+from{background:url(banner/p5.jpg);}
+to{background:url(banner/p6.jpg);}
+}
+
+@keyframes changepic2
+{
+10%{background:url(banner/p1.jpg);}
+20%{background:url(banner/p1.jpg);}
+30%{background:url(banner/p2.jpg);}
+40%{background:url(banner/p2.jpg);}
+50%{background:url(banner/p3.jpg);}
+60%{background:url(banner/p3.jpg);}
+70%{background:url(banner/p4.jpg);}
+80%{background:url(banner/p4.jpg);}
+90%{background:url(banner/p5.jpg);}
+100%{background:url(banner/p5.jpg);}
+}
+
+
+#banner1
+{
+cursor:pointer;
+width:47%;
+height:300px;
+box-shadow:10px 10px 10px gray;
+background:red;
+margin:auto;
+transition:2s;
+
+background:white;
+color:white;
+font-size:50px;
+font-family:arial black;
+background:url(banner/p2.jpg);
+padding:20px;
+background-repeat:no-repeat;
+background-size:cover;
+animation:changepic2 22s infinite;
+
+}
+
+.mystyle
+{
+background:url(images/b5.jpg) repeat-x ;
+
+/*
+background-repeat:no-repeat;
+background-repeat:repeat-x;
+background-repeat:repeat-y;
+background-attachment: fixed; 
+background-attachment:scroll;
+background-position-x: center; 
+background-position-x:right; 
+background-position-x:right; 
+background-position-y: center;
+background-repeat: repeat-y;
+background-repeat: repeat-x;
+background-repeat:no-repeat;
+background-size: 100px 100px;
+background-size: cover;
+*/
+
+}
+
+
+
+
+</style>
+
+<body class="mystyle">
+
+
+<div id ='banner1'>
+
+<br/>
+
+<span style="box-shadow:10px 10px 10px black;margin-left:150px;padding:20px;background:gray;opacity:0.60;">FLOWERS</span>
+
+
+</div>
+
+
+</body>
+
+
+</html>
