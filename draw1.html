@@ -1,0 +1,82 @@
+<html>
+
+<body>
+<script>
+/* draw by mouse */
+var canvas = document.createElement('canvas');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+document.body.appendChild(canvas);
+var context = canvas.getContext('2d');
+var mouseDown = false;
+canvas.addEventListener('mousedown', function(e) {
+  mouseDown = true;
+  context.beginPath();
+  context.moveTo(e.clientX, e.clientY);
+});
+canvas.addEventListener('mouseup', function(e) {
+  mouseDown = false;
+});
+canvas.addEventListener('mousemove', function(e) {
+  if (mouseDown) {
+    context.lineTo(e.clientX, e.clientY);
+    context.stroke();
+  }
+});
+
+/* add erase ruber */
+var erase = document.createElement('div');
+erase.innerHTML = 'Erase';
+erase.style.position = 'absolute';
+erase.style.top = '0px';
+erase.style.right = '0px';
+erase.style.backgroundColor = 'white';
+erase.style.padding = '10px';
+erase.style.cursor = 'pointer';
+document.body.appendChild(erase);
+erase.addEventListener('click', function() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+/* color option for drawing */
+var color = document.createElement('input');
+color.type = 'color';
+color.value = '#000000';
+color.style.position = 'absolute';
+color.style.top = '0px';
+color.style.right = '100px';
+document.body.appendChild(color);
+color.addEventListener('change', function() {
+  context.strokeStyle = color.value;
+});
+
+/* create rubber */
+var rubber = document.createElement('div');
+rubber.innerHTML = 'Rubber';
+rubber.style.position = 'absolute';
+rubber.style.top = '0px';
+rubber.style.right = '200px';
+rubber.style.backgroundColor = 'white';
+rubber.style.padding = '10px';
+rubber.style.cursor = 'pointer';
+document.body.appendChild(rubber);
+rubber.addEventListener('click', function() {
+  context.strokeStyle = 'white';
+});
+
+/* eraser width */
+var eraserWidth = document.createElement('input');
+eraserWidth.type = 'range';
+eraserWidth.min = '1';
+eraserWidth.max = '100';
+eraserWidth.value = '10';
+eraserWidth.style.position = 'absolute';
+eraserWidth.style.top = '0px';
+eraserWidth.style.right = '300px';
+document.body.appendChild(eraserWidth);
+eraserWidth.addEventListener('change', function() {
+  context.lineWidth = eraserWidth.value;
+});
+</script>
+</body>
+</html>
