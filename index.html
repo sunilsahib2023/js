@@ -1,57 +1,132 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<title>Images </title>
-<h1>Working With Images </h1>
+<head> 
+<!--
+<meta http-equiv="refresh" content="1">
+-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <style>
-@keyframes ani4
+#header{width:98%;margin:auto;text-align:center;height:300px;background:black;color:white;clear:both;}
+
+
+
+
+#nav{width:
+98%;margin:auto;text-align:center;background:olive;color:black;
+
+}
+
+
+
+#container
 {
-from{transform:rotateX(145deg);transform:rotateY(145deg);}
-to { transform:rotateY(1deg);transform:rotateX(660deg);}
+width:98%;
+background:cyan;
+font-size:35px;color:white;
+text-align:center;
+display:flex;
+margin:auto;
+paddinf:5px;
+flex-wrap: wrap;
+justify-content: flex-start;
+justify-content: space-around;
+
 }
 
-.mybox {
-  width: 300px;
-  height: 300px;
-  margin: 40px;
-background:black;
-  /* perspective property */
-  perspective: 200px;
+#nav ol {list-style:none;}
+
+#nav ol li{background:yellow;padding:20px;text-align:center;margin-left:-40px;}
+
+
+#nav ol li:hover{background:orange;cursor:pointer;}
+
+
+
+
+#left{height:500px;width:100%;}
+#middle{height:500px;width:100%;}
+#right{height:500px;width:100%;}
+
+
+#left{background:red;margin:1px;}
+#middle{background:red;margin:1px;}
+#right{background:red;margin:1px;}
+
+
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */ 
+
+
+@media only screen and (min-width:481px)
+{
+
+#nav{
+display:flex;
+flex-wrap: wrap;
+justify-content: space-around;
+
 }
 
-.box1 {
-  width: 100%;
-  height: 100%;
-  background:red;
-  transform: rotateY(145deg);
-animation:ani4 2s  infinite ;
+#nav ol li{background:yellow;padding:10px;;display:inline-block;text-align:center;margin-left:0px;}
+
+
+
+#left{background:green;width:20%;}
+#middle{height:500px;width:78%;}
+#right{height:200px;width:100%;}
+
 }
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+
+@media only screen and (min-width: 769px)
+ {
+#header{margin-top:70px;}	
+#nav{position:fixed;top:0px;width:97%;margin-left:12px;}
+
+#left{background:orange;width:20%;}
+#middle{height:500px;width:65%;}
+#right{height:500px;width:13%;}
+
+         }
+
+
+
+
+#footer{
+width:98%;margin:auto;text-align:center;height:200px;background:brown;color:white;}
+
+
 </style>
 
 <body>
+<div id="header">Header</div>
+<div id="nav">
+<ol>
+<li>Home</li>
+<li>PRODUCT</li>
+<li>SERVICES</li>
+<li>ABOUT</li>
+<li>DATA</li>
 
-<div class="mybox">
+</ol>
 
-  <div class="box1"> <img src="images/p1.jpg" style="width:100%;height:300px;"> </div>
- 
+
+ </div>
+<div id="container">
+	<div id="left">Left</div>
+	<div id="middle">Middel</div>
+	<div id="right">right</div>
 </div>
-  <ol>
-<li><a href="alarm.html">Alarm</a></li>
 
-<li><a href="slider1.html">Slider Banner</a></li>
-<li><a href="box-shadow on button.html">Hover Button</a></li>
-<li><a href="dilogbox.html">Dilog box</a></li>
-<li><a href="div_ani3 - Copy.html">Ani</a></li>
-<li><a href="draw1.html">Draw</a></li>
-<li><a href="draw_by_js(for mobile app).html">Draw Mobile app </a></li>
- <li><a href="menu2.html">Menu</a></li>
-  </ol>
+
+
+<div id="footer">Footer</div>
+
+
 
 </body>
-
-
-
-
 </html>
-
